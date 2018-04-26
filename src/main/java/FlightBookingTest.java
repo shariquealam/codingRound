@@ -7,13 +7,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import java.lang.*;
 
 import java.util.List;
 
-public class FlightBookingTest {
+public class FlightBookingTest extends commonMethods{
 
     WebDriver driver = new ChromeDriver();
-
 
     @Test
     public void testThatResultsAppearForAOneWayJourney() {
@@ -49,34 +49,18 @@ public class FlightBookingTest {
 
         //all fields filled in. Now click on search
         driver.findElement(By.id("SearchBtn")).click();
-
-        waitFor(5000);
+        
+        // Wait till Screen "searchSummary" is loaded.
+        waitTillIsVisiable(driver, "searchSummary");
+        
         //verify that result appears for the provided journey search
-        Assert.assertTrue(isElementPresent(By.className("searchSummary")));
+        Assert.assertTrue(isElementPresent(driver, By.className("searchSummary")));
 
         //close the browser
         driver.quit();
 
     }
-
-
-    private void waitFor(int durationInMilliSeconds) {
-        try {
-            Thread.sleep(durationInMilliSeconds);
-        } catch (InterruptedException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
-    }
-
-
-    private boolean isElementPresent(By by) {
-        try {
-            driver.findElement(by);
-            return true;
-        } catch (NoSuchElementException e) {
-            return false;
-        }
-    }
+    
 
     // Added else if in below method
     private void setDriverPath() {
