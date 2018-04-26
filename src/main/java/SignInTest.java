@@ -19,7 +19,13 @@ public class SignInTest {
 
         driver.findElement(By.linkText("Your trips")).click();
         driver.findElement(By.id("SignIn")).click();
-
+        
+        // Wait for 5 sec
+        waitFor(5000);
+        
+		//Need to switch the frame. because its present in frame
+		driver.switchTo().frame("modal_window");
+		waitFor(1000);
         driver.findElement(By.id("signInButton")).click();
 
         String errors1 = driver.findElement(By.id("errors1")).getText();
