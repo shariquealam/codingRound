@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SignInTest {
+public class SignInTest extends commonMethods {
 
     WebDriver driver = new ChromeDriver();
 
@@ -15,7 +15,7 @@ public class SignInTest {
         setDriverPath();
 
         driver.get("https://www.cleartrip.com/");
-        waitFor(2000);
+        waitFor(1000);
 
         driver.findElement(By.linkText("Your trips")).click();
         driver.findElement(By.id("SignIn")).click();
@@ -33,13 +33,13 @@ public class SignInTest {
         driver.quit();
     }
 
-    private void waitFor(int durationInMilliSeconds) {
-        try {
-            Thread.sleep(durationInMilliSeconds);
-        } catch (InterruptedException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
-    }
+//    private void waitFor(int durationInMilliSeconds) {
+//        try {
+//            Thread.sleep(durationInMilliSeconds);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+//        }
+//    }
     
     // Change If conditions to else If
     private void setDriverPath() {
