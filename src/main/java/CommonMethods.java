@@ -8,31 +8,22 @@ import com.sun.javafx.PlatformUtil;
 public class CommonMethods {
 	
 	// Method to wait till an element is visiable.It will try for max 10 sec.
-    public void waitTillIsVisiable(WebDriver driver, String elementName) {
-    	try {
-    		int maxLoopCount = 10;
-        	int totalSeconds = 0;
+	public void waitTillIsVisiable(WebDriver driver, String elementName) {
+    	int maxLoopCount = 10;
+        int totalSeconds = 0;
         	
-        	while ( totalSeconds <= maxLoopCount) {
+        while ( totalSeconds <= maxLoopCount) {
         		
-        		if ( isElementPresent(driver, By.className(elementName)) == true ) {
-            		break;
-            	}
-        		
-        		try {
-                    // thread to sleep for 1000 milliseconds
-                    Thread.sleep(1000);
-                 } catch (Exception e) {
-                    System.out.println(e);
-                 }
-        		
-        		totalSeconds = + 1;
+        	if ( isElementPresent(driver, By.className(elementName)) == true ) {
+            	break;
+            }
+        	
+        	waitFor(1000);
+
+        	totalSeconds = + 1;
         	}
-        } catch (NoSuchElementException e) {
-        	
-        }
-    	
-    }
+        }        
+
 
     public void waitFor(int durationInMilliSeconds) {
         try {

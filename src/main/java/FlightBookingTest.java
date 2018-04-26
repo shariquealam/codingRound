@@ -44,7 +44,6 @@ public class FlightBookingTest extends CommonMethods{
         destinationOptions.get(0).click();
         
         // Changed div[1] to div[2]
-        //driver.findElement(By.xpath("//*[@id='ui-datepicker-div']/div[1]/table/tbody/tr[3]/td[7]/a")).click();
         driver.findElement(By.xpath("//*[@id='ui-datepicker-div']/div[2]/table/tbody/tr[3]/td[7]/a")).click();
 
         //all fields filled in. Now click on search
