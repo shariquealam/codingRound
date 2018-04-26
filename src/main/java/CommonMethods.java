@@ -3,17 +3,9 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
-import org.testng.annotations.Test;
-
 import com.sun.javafx.PlatformUtil;
 
-import java.lang.*;
-
-import java.util.List;
-
-public class commonMethods {
+public class CommonMethods {
 	
 	// Method to wait till an element is visiable.It will try for max 10 sec.
     public void waitTillIsVisiable(WebDriver driver, String elementName) {

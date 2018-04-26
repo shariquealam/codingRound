@@ -11,7 +11,7 @@ import java.lang.*;
 
 import java.util.List;
 
-public class FlightBookingTest extends commonMethods{
+public class FlightBookingTest extends CommonMethods{
 
     WebDriver driver = new ChromeDriver();
 

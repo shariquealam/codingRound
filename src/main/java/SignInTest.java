@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SignInTest extends commonMethods {
+public class SignInTest extends CommonMethods {
 
     WebDriver driver = new ChromeDriver();
 

@@ -12,7 +12,7 @@ import com.sun.javafx.PlatformUtil;
 import java.util.List;
 import org.openqa.selenium.By;
 
-public class HotelBookingTest extends commonMethods{
+public class HotelBookingTest extends CommonMethods{
 
     WebDriver driver = new ChromeDriver();
 
