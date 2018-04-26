@@ -6,6 +6,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import com.sun.javafx.PlatformUtil;
+
 import java.lang.*;
 
 import java.util.List;
@@ -57,6 +60,19 @@ public class commonMethods {
         }
     }
 	
+    
+ // Change If conditions to else If
+    public void setDriverPath() {
+        if (PlatformUtil.isMac()) {
+            System.setProperty("webdriver.chrome.driver", "chromedriver_mac");
+        }
+        else if (PlatformUtil.isWindows()) {
+            System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+        }
+        else if (PlatformUtil.isLinux()) {
+            System.setProperty("webdriver.chrome.driver", "chromedriver_linux");
+        }
+    }
 	
 	
 }

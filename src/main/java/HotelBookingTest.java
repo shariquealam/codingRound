@@ -73,20 +73,5 @@ public class HotelBookingTest extends commonMethods{
         driver.quit();
 
     }
-    
-    
-    // Added else if in below method
-    private void setDriverPath() {
-    	
-        if (PlatformUtil.isMac()) {
-            System.setProperty("webdriver.chrome.driver", "chromedriver");
-        }
-        else if (PlatformUtil.isWindows()) {
-            System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-        }
-        else if (PlatformUtil.isLinux()) {
-            System.setProperty("webdriver.chrome.driver", "chromedriver_linux");
-        }
-    }
 
 }

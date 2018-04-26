@@ -33,26 +33,4 @@ public class SignInTest extends commonMethods {
         driver.quit();
     }
 
-//    private void waitFor(int durationInMilliSeconds) {
-//        try {
-//            Thread.sleep(durationInMilliSeconds);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-//        }
-//    }
-    
-    // Change If conditions to else If
-    private void setDriverPath() {
-        if (PlatformUtil.isMac()) {
-            System.setProperty("webdriver.chrome.driver", "chromedriver");
-        }
-        else if (PlatformUtil.isWindows()) {
-            System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-        }
-        else if (PlatformUtil.isLinux()) {
-            System.setProperty("webdriver.chrome.driver", "chromedriver_linux");
-        }
-    }
-
-
 }
