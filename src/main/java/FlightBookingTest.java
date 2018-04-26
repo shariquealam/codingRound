@@ -32,7 +32,7 @@ public class FlightBookingTest {
         List<WebElement> originOptions = driver.findElement(By.id("ui-id-1")).findElements(By.tagName("li"));
         originOptions.get(0).click();
 		
-        // To field name incorrrect. Changed from "toTag" to "ToTag"
+        // To field name incorrect. Changed from "toTag" to "ToTag"
         driver.findElement(By.id("ToTag")).clear();
         driver.findElement(By.id("ToTag")).sendKeys("Delhi");
 
