@@ -12,7 +12,7 @@ import com.sun.javafx.PlatformUtil;
 import java.util.List;
 import org.openqa.selenium.By;
 
-public class HotelBookingTest {
+public class HotelBookingTest extends commonMethods{
 
     WebDriver driver = new ChromeDriver();
 
@@ -29,16 +29,16 @@ public class HotelBookingTest {
     private WebElement travellerSelection;
     
     //Need to add Constructor and declear PageFactory.initElements(driver,this); 
-    public HotelBookingTest(){
+    public HotelBookingTest() {
 
-        //This initElements method will create all WebElements
-        PageFactory.initElements(driver, this);
-
+    	//This initElements method will create all WebElements
+    	PageFactory.initElements(driver, this);
     }
     
     
     @Test
     public void shouldBeAbleToSearchForHotels() {
+    	
         setDriverPath();
 
         driver.get("https://www.cleartrip.com/");
@@ -47,7 +47,7 @@ public class HotelBookingTest {
         localityTextBox.sendKeys("Indiranagar, Bangalore");
         
         // Wait till suggestion list displays
-        waitFor(5000);
+        waitFor(2000);
         
         // Select the first element from the list.
         List<WebElement> originOptions = driver.findElement(By.id("ui-id-1")).findElements(By.tagName("li"));
@@ -56,43 +56,28 @@ public class HotelBookingTest {
         // Chose a Hotel Check-in date
         driver.findElement(By.xpath("//*[@id='ui-datepicker-div']/div[2]/table/tbody/tr[2]/td[1]/a")).click();
         
-        waitFor(2000);
-     // Chose a Hotel Check-out date
+        waitFor(1000);
+        // Chose a Hotel Check-out date
         driver.findElement(By.xpath("//*[@id='ui-datepicker-div']/div[2]/table/tbody/tr[2]/td[2]/a")).click();
         
         
         new Select(travellerSelection).selectByVisibleText("1 room, 2 adults");
         searchButton.click();
 
-        waitFor(5000);
-        //verify that result appears for the provided journey search
-        Assert.assertTrue(isElementPresent(By.className("searchSummary")));
+        // Wait till Screen "searchSummary" is loaded.
+        waitTillIsVisiable(driver, "searchSummary");
         
-        waitFor(2000);
+        //verify that result appears for the provided journey search
+        Assert.assertTrue(isElementPresent(driver, By.className("searchSummary")));
+        
         driver.quit();
 
     }
     
     
-    private void waitFor(int durationInMilliSeconds) {
-        try {
-            Thread.sleep(durationInMilliSeconds);
-        } catch (InterruptedException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
-    }
-    
-    private boolean isElementPresent(By by) {
-        try {
-            driver.findElement(by);
-            return true;
-        } catch (NoSuchElementException e) {
-            return false;
-        }
-    }
-    
     // Added else if in below method
     private void setDriverPath() {
+    	
         if (PlatformUtil.isMac()) {
             System.setProperty("webdriver.chrome.driver", "chromedriver");
         }
