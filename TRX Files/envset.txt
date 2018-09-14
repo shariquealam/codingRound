@@ -1,0 +1,6 @@
+JMETER_HOME
+C:\Users\Administrator\Desktop\apache_jmeter\apache-jmeter-4.0
+
+
+path
+C:\ProgramData\Oracle\Java\javapath;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;C:\Program Files\Amazon\cfn-bootstrap\;C:\Python27\;C:\Python27\Scripts\;%JMETER_HOME%\bin
