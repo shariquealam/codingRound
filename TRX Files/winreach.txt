@@ -1,0 +1,7 @@
+Command to trigger traffic for Win Reach test (Run JMeter script)
+
+jmeter -n -t C:/Users/Administrator/Documents/jmx/HTTP-Request-Default.jmx -Jtd 30 -Jramp 120 -Jdur 3600 -l C:/Users/Administrator/Documents/test_logs/result.jtl -e -o C:/Users/Administrator/Documents/test_logs/dashboard
+
+Command to trigger traffic for Win Reach Longevity test (Run JMeter script)
+
+jmeter -n -t C:/Users/Administrator/Documents/jmx/HTTP-Request-Default.jmx -Jtd 25 -Jramp 120 -Jdur 259200 -l C:/Users/Administrator/Documents/test_logs/result.jtl -e -o C:/Users/Administrator/Documents/test_logs/dashboard
